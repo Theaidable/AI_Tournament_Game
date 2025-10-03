@@ -5,14 +5,14 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "962889025aca4f6d039126bcc1408bdbaf333fc8"
+      "hash": "9d015a2b618be83ba92803efb83d3606c601ee1b"
     },
     "com.dania.aigame.core": {
       "version": "https://github.com/DaniaGames/com.dania.aigame.core.git",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "6154fe6e604f80749c061c941bebea99ee732adc"
+      "hash": "428f7154fb62df3dcdeb6aa5a9935e24c3e438e9"
     },
     "com.unity.2d.sprite": {
       "version": "1.0.0",
