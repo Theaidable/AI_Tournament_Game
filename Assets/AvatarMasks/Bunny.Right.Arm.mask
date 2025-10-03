@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Bunny.Right.Arm
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Bunny_Armature
+    m_Weight: 0
+  - m_Path: Bunny_Armature/Pelvis
+    m_Weight: 0
+  - m_Path: Bunny_Armature/Pelvis/Hip.L
+    m_Weight: 0
+  - m_Path: Bunny_Armature/Pelvis/Hip.L/Upper.Leg.L
+    m_Weight: 0
+  - m_Path: Bunny_Armature/Pelvis/Hip.L/Upper.Leg.L/Lower.Leg.L
+    m_Weight: 0
+  - m_Path: Bunny_Armature/Pelvis/Hip.L/Upper.Leg.L/Lower.Leg.L/Foot.L
+    m_Weight: 0
+  - m_Path: Bunny_Armature/Pelvis/Hip.L/Upper.Leg.L/Lower.Leg.L/Foot.L/Foot.L_end
+    m_Weight: 0
+  - m_Path: Bunny_Armature/Pelvis/Hip.R
+    m_Weight: 0
+  - m_Path: Bunny_Armature/Pelvis/Hip.R/Upper.Leg.R
+    m_Weight: 0
+  - m_Path: Bunny_Armature/Pelvis/Hip.R/Upper.Leg.R/Lower.Leg.R
+    m_Weight: 0
+  - m_Path: Bunny_Armature/Pelvis/Hip.R/Upper.Leg.R/Lower.Leg.R/Foot.R
+    m_Weight: 0
+  - m_Path: Bunny_Armature/Pelvis/Hip.R/Upper.Leg.R/Lower.Leg.R/Foot.R/Foot.R_end
+    m_Weight: 0
+  - m_Path: Bunny_Armature/Pelvis/Spine
+    m_Weight: 0
+  - m_Path: Bunny_Armature/Pelvis/Spine/Head
+    m_Weight: 0
+  - m_Path: Bunny_Armature/Pelvis/Spine/Head/Lower.Ear.L
+    m_Weight: 0
+  - m_Path: Bunny_Armature/Pelvis/Spine/Head/Lower.Ear.L/Upper.Ear.L
+    m_Weight: 0
+  - m_Path: Bunny_Armature/Pelvis/Spine/Head/Lower.Ear.L/Upper.Ear.L/Upper.Ear.L_end
+    m_Weight: 0
+  - m_Path: Bunny_Armature/Pelvis/Spine/Head/Lower.Ear.R
+    m_Weight: 0
+  - m_Path: Bunny_Armature/Pelvis/Spine/Head/Lower.Ear.R/Upper.Ear.R
+    m_Weight: 0
+  - m_Path: Bunny_Armature/Pelvis/Spine/Head/Lower.Ear.R/Upper.Ear.R/Upper.Ear.R_end
+    m_Weight: 0
+  - m_Path: Bunny_Armature/Pelvis/Spine/Shoulder.L
+    m_Weight: 0
+  - m_Path: Bunny_Armature/Pelvis/Spine/Shoulder.L/Upper.Arm.L
+    m_Weight: 0
+  - m_Path: Bunny_Armature/Pelvis/Spine/Shoulder.L/Upper.Arm.L/Lower.Arm.L
+    m_Weight: 0
+  - m_Path: Bunny_Armature/Pelvis/Spine/Shoulder.L/Upper.Arm.L/Lower.Arm.L/Hand.L
+    m_Weight: 0
+  - m_Path: Bunny_Armature/Pelvis/Spine/Shoulder.L/Upper.Arm.L/Lower.Arm.L/Hand.L/Hand.L_end
+    m_Weight: 0
+  - m_Path: Bunny_Armature/Pelvis/Spine/Shoulder.R
+    m_Weight: 0
+  - m_Path: Bunny_Armature/Pelvis/Spine/Shoulder.R/Upper.Arm.R
+    m_Weight: 1
+  - m_Path: Bunny_Armature/Pelvis/Spine/Shoulder.R/Upper.Arm.R/Lower.Arm.R
+    m_Weight: 1
+  - m_Path: Bunny_Armature/Pelvis/Spine/Shoulder.R/Upper.Arm.R/Lower.Arm.R/Hand.R
+    m_Weight: 1
+  - m_Path: Bunny_Armature/Pelvis/Spine/Shoulder.R/Upper.Arm.R/Lower.Arm.R/Hand.R/Hand.R_end
+    m_Weight: 1
+  - m_Path: Bunny_Armature/Pelvis/Tail.Bone
+    m_Weight: 0
+  - m_Path: Bunny_Armature/Pelvis/Tail.Bone/Tail.Lower
+    m_Weight: 0
+  - m_Path: Bunny_Armature/Pelvis/Tail.Bone/Tail.Lower/Tail.Lower_end
+    m_Weight: 0
+  - m_Path: Bunny_Outlline
+    m_Weight: 0
+  - m_Path: Bunny_Smooth
+    m_Weight: 0

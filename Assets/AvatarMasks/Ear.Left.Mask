@@ -1,0 +1,77 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Ear.Left
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Fox_Armature
+    m_Weight: 0
+  - m_Path: Fox_Armature/Pelvis
+    m_Weight: 0
+  - m_Path: Fox_Armature/Pelvis/Spine
+    m_Weight: 0
+  - m_Path: Fox_Armature/Pelvis/Spine/Head
+    m_Weight: 0
+  - m_Path: Fox_Armature/Pelvis/Spine/Head/Lower.Ear.L
+    m_Weight: 1
+  - m_Path: Fox_Armature/Pelvis/Spine/Head/Lower.Ear.L/Upper.Ear.L
+    m_Weight: 1
+  - m_Path: Fox_Armature/Pelvis/Spine/Head/Lower.Ear.L/Upper.Ear.L/Upper.Ear.L_end
+    m_Weight: 1
+  - m_Path: Fox_Armature/Pelvis/Spine/Head/Lower.Ear.R
+    m_Weight: 0
+  - m_Path: Fox_Armature/Pelvis/Spine/Head/Lower.Ear.R/Upper.Ear.R
+    m_Weight: 0
+  - m_Path: Fox_Armature/Pelvis/Spine/Head/Lower.Ear.R/Upper.Ear.R/Upper.Ear.R_end
+    m_Weight: 0
+  - m_Path: Fox_Armature/Pelvis/Spine/Upper.Arm.L
+    m_Weight: 0
+  - m_Path: Fox_Armature/Pelvis/Spine/Upper.Arm.L/Lower.Arm.L
+    m_Weight: 0
+  - m_Path: Fox_Armature/Pelvis/Spine/Upper.Arm.L/Lower.Arm.L/Hand.L
+    m_Weight: 0
+  - m_Path: Fox_Armature/Pelvis/Spine/Upper.Arm.L/Lower.Arm.L/Hand.L/Hand.L_end
+    m_Weight: 0
+  - m_Path: Fox_Armature/Pelvis/Spine/Upper.Arm.R
+    m_Weight: 0
+  - m_Path: Fox_Armature/Pelvis/Spine/Upper.Arm.R/Lower.Arm.R
+    m_Weight: 0
+  - m_Path: Fox_Armature/Pelvis/Spine/Upper.Arm.R/Lower.Arm.R/Hand.R
+    m_Weight: 0
+  - m_Path: Fox_Armature/Pelvis/Spine/Upper.Arm.R/Lower.Arm.R/Hand.R/Hand.R_end
+    m_Weight: 0
+  - m_Path: Fox_Armature/Pelvis/Tail.Bone
+    m_Weight: 0
+  - m_Path: Fox_Armature/Pelvis/Tail.Bone/Tail.Lower
+    m_Weight: 0
+  - m_Path: Fox_Armature/Pelvis/Tail.Bone/Tail.Lower/Tail.Middle
+    m_Weight: 0
+  - m_Path: Fox_Armature/Pelvis/Tail.Bone/Tail.Lower/Tail.Middle/Tail.Upper
+    m_Weight: 0
+  - m_Path: Fox_Armature/Pelvis/Tail.Bone/Tail.Lower/Tail.Middle/Tail.Upper/Tail.Upper_end
+    m_Weight: 0
+  - m_Path: Fox_Armature/Upper.Leg.L
+    m_Weight: 0
+  - m_Path: Fox_Armature/Upper.Leg.L/Lower.Leg.L
+    m_Weight: 0
+  - m_Path: Fox_Armature/Upper.Leg.L/Lower.Leg.L/Foot.L
+    m_Weight: 0
+  - m_Path: Fox_Armature/Upper.Leg.L/Lower.Leg.L/Foot.L/Foot.L_end
+    m_Weight: 0
+  - m_Path: Fox_Armature/Upper.Leg.R
+    m_Weight: 0
+  - m_Path: Fox_Armature/Upper.Leg.R/Lower.Leg.R
+    m_Weight: 0
+  - m_Path: Fox_Armature/Upper.Leg.R/Lower.Leg.R/Foot.R
+    m_Weight: 0
+  - m_Path: Fox_Armature/Upper.Leg.R/Lower.Leg.R/Foot.R/Foot.R_end
+    m_Weight: 0
+  - m_Path: Fox_Smooth
+    m_Weight: 0

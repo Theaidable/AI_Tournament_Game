@@ -1,0 +1,645 @@
+fileFormatVersion: 2
+guid: 4e6fa0959ae9a2f4f96bc8956f2f5d4f
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fox
+    second: {fileID: 2100000, guid: 2b8731b6505c3cd48b894da4182139e9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fox_Eye
+    second: {fileID: 2100000, guid: c3eeb345ad03ec04388833dc3b62f421, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Fox_Eye_Lids
+    second: {fileID: 2100000, guid: e62d211dc4bb15044859c48f8d7e2dcb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Outline
+    second: {fileID: 2100000, guid: a4c30f493748968478ccab770778c9ee, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Fox.Ear.Wink
+      takeName: Fox.Ear.Wink
+      internalID: -9192475610894018255
+      firstFrame: 0
+      lastFrame: 16
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Fox.Idle
+      takeName: Fox.Idle
+      internalID: -7719613392072830588
+      firstFrame: 0
+      lastFrame: 120
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Fox.Jump
+      takeName: Fox.Jump
+      internalID: 1020572899565570217
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Fox.Jump.Land
+      takeName: Fox.Jump.Land
+      internalID: -5629583234690693437
+      firstFrame: 0
+      lastFrame: 10
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Fox.Jump.Takeoff
+      takeName: Fox.Jump.Takeoff
+      internalID: -3100570880018792704
+      firstFrame: 0
+      lastFrame: 10
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Fox.Roll
+      takeName: Fox.Roll
+      internalID: -4576785405132444178
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Fox.Run
+      takeName: Fox.Run
+      internalID: -7733401818069094530
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Fox.Strafe.Left
+      takeName: Fox.Strafe.Left
+      internalID: -8506473543308376489
+      firstFrame: 0
+      lastFrame: 10
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Fox.Strafe.Right
+      takeName: Fox.Strafe.Right
+      internalID: 4707758920307083108
+      firstFrame: 0
+      lastFrame: 10
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Fox.Throw
+      takeName: Fox.Throw
+      internalID: -1726723424361077678
+      firstFrame: 0
+      lastFrame: 5
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Fox.Walk
+      takeName: Fox.Walk
+      internalID: 8141781799529429391
+      firstFrame: 0
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Fox.Windup
+      takeName: Fox.Windup
+      internalID: -5177009796940504245
+      firstFrame: 0
+      lastFrame: 5
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 1
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton:
+    - name: Character_Fox(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Fox_Armature
+      parentName: Character_Fox(Clone)
+      position: {x: 0, y: 0.45967975, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Pelvis
+      parentName: Fox_Armature
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+      scale: {x: 1, y: 0.9999998, z: 0.9999998}
+    - name: Spine
+      parentName: Pelvis
+      position: {x: -0, y: 0.0041132676, z: 0}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Head
+      parentName: Spine
+      position: {x: -0, y: 0.0058259773, z: 0}
+      rotation: {x: -0, y: -0.00000011920927, z: -0, w: 1}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: Lower.Ear.R
+      parentName: Head
+      position: {x: 0.0104531115, y: 0.019198129, z: -0.0000000024922158}
+      rotation: {x: -0.00000003246584, y: 0.00000036802294, z: -0.27234328, w: 0.9622002}
+      scale: {x: 1.0000004, y: 1.0000001, z: 1}
+    - name: Upper.Ear.R
+      parentName: Lower.Ear.R
+      position: {x: -5.9604627e-10, y: 0.0029275757, z: -4.6185276e-16}
+      rotation: {x: -0.000000015324117, y: -0.000000011425724, z: 0.07049034, w: 0.99751246}
+      scale: {x: 0.9999998, y: 0.9999998, z: 1}
+    - name: Upper.Ear.R_end
+      parentName: Upper.Ear.R
+      position: {x: -0, y: 0.008889915, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Lower.Ear.L
+      parentName: Head
+      position: {x: -0.0104531115, y: 0.019198129, z: 0.0000000024922158}
+      rotation: {x: 0.00000003246584, y: -0.00000013861656, z: 0.27234328, w: 0.9622002}
+      scale: {x: 1.0000004, y: 1.0000001, z: 1}
+    - name: Upper.Ear.L
+      parentName: Lower.Ear.L
+      position: {x: 5.9604627e-10, y: 0.0029275757, z: -1.4210854e-16}
+      rotation: {x: -0.000000015324114, y: 0.000000011425753, z: -0.07049034, w: 0.99751246}
+      scale: {x: 0.9999998, y: 0.9999998, z: 1}
+    - name: Upper.Ear.L_end
+      parentName: Upper.Ear.L
+      position: {x: -0, y: 0.008889915, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Upper.Arm.L
+      parentName: Spine
+      position: {x: -0.0050426293, y: 0.005765223, z: -8.162913e-12}
+      rotation: {x: 0.0000001490116, y: -0.00000023841855, z: 0.7228762, w: 0.69097763}
+      scale: {x: 1.0000006, y: 1.0000005, z: 1}
+    - name: Lower.Arm.L
+      parentName: Upper.Arm.L
+      position: {x: -5.9604666e-10, y: 0.0044752667, z: 1.0658141e-16}
+      rotation: {x: 0.00000006172573, y: -0.00000019176673, z: 0.010288355, w: 0.9999471}
+      scale: {x: 1.0000008, y: 1.0000007, z: 1}
+    - name: Hand.L
+      parentName: Lower.Arm.L
+      position: {x: -5.960467e-10, y: 0.0029362347, z: 7.4606985e-16}
+      rotation: {x: 0.000000058074036, y: 0.000000017745704, z: 0.078484304, w: 0.9969154}
+      scale: {x: 1.0000014, y: 1.0000017, z: 1}
+    - name: Hand.L_end
+      parentName: Hand.L
+      position: {x: -0, y: 0.0017215512, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Upper.Arm.R
+      parentName: Spine
+      position: {x: 0.0050426293, y: 0.005765223, z: -8.162913e-12}
+      rotation: {x: -0.0000001490116, y: -0.00000023841855, z: 0.7228762, w: -0.69097763}
+      scale: {x: 1.0000006, y: 1.0000005, z: 1}
+    - name: Lower.Arm.R
+      parentName: Upper.Arm.R
+      position: {x: 5.9604666e-10, y: 0.0044752667, z: 1.0658141e-16}
+      rotation: {x: 0.00000006172573, y: 0.00000019176673, z: -0.010288355, w: 0.9999471}
+      scale: {x: 1.0000008, y: 1.0000007, z: 1}
+    - name: Hand.R
+      parentName: Lower.Arm.R
+      position: {x: 5.960467e-10, y: 0.0029362347, z: 7.4606985e-16}
+      rotation: {x: 0.000000058074036, y: -0.000000017745704, z: -0.078484304, w: 0.9969154}
+      scale: {x: 1.0000014, y: 1.0000017, z: 1}
+    - name: Hand.R_end
+      parentName: Hand.R
+      position: {x: -0, y: 0.0017215512, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Tail.Bone
+      parentName: Pelvis
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.6508, y: -0, z: -0, w: 0.7592493}
+      scale: {x: 1, y: 1.0000002, z: 1.0000002}
+    - name: Tail.Lower
+      parentName: Tail.Bone
+      position: {x: -0, y: 0.0039897854, z: 3.7252902e-11}
+      rotation: {x: 0.115664095, y: -0.00000011840923, z: -0.000000013788245, w: 0.9932884}
+      scale: {x: 1, y: 0.9999996, z: 0.9999996}
+    - name: Tail.Middle
+      parentName: Tail.Lower
+      position: {x: 5.3290704e-17, y: 0.008399036, z: 2.2351741e-10}
+      rotation: {x: 0.14967704, y: 4.263256e-14, z: -0.000000035685794, w: 0.988735}
+      scale: {x: 1, y: 1.0000001, z: 1.0000001}
+    - name: Tail.Upper
+      parentName: Tail.Middle
+      position: {x: -8.6911794e-17, y: 0.004442063, z: -8.9406965e-10}
+      rotation: {x: 0.24251099, y: 5.4703277e-15, z: -0.00000005781911, w: 0.97014874}
+      scale: {x: 1, y: 1, z: 0.99999976}
+    - name: Tail.Upper_end
+      parentName: Tail.Upper
+      position: {x: -0, y: 0.007190077, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Upper.Leg.L
+      parentName: Fox_Armature
+      position: {x: -0.0035237651, y: 1.6325825e-10, z: 0.000082902385}
+      rotation: {x: 0.5, y: 0.5, z: -0.5, w: -0.5}
+      scale: {x: 1.0000002, y: 0.99999994, z: 1}
+    - name: Lower.Leg.L
+      parentName: Upper.Leg.L
+      position: {x: -0, y: 0.0019096442, z: -7.216449e-18}
+      rotation: {x: -0, y: 0.7071067, z: -0.000000012344529, w: 0.7071069}
+      scale: {x: 1, y: 1.000001, z: 1.0000008}
+    - name: Foot.L
+      parentName: Lower.Leg.L
+      position: {x: -2.980232e-10, y: 0.002231682, z: 7.105427e-17}
+      rotation: {x: -0.47316715, y: 0.5254645, z: -0.47316736, w: 0.5254642}
+      scale: {x: 1, y: 0.99999976, z: 0.9999999}
+    - name: Foot.L_end
+      parentName: Foot.L
+      position: {x: -0, y: 0.0027303263, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Upper.Leg.R
+      parentName: Fox_Armature
+      position: {x: 0.0035237651, y: 1.6325825e-10, z: 0.000082902385}
+      rotation: {x: 0.5, y: -0.5, z: 0.5, w: -0.5}
+      scale: {x: 1.0000002, y: 0.99999994, z: 1}
+    - name: Lower.Leg.R
+      parentName: Upper.Leg.R
+      position: {x: -0, y: 0.0019096442, z: -7.216449e-18}
+      rotation: {x: -0, y: -0.7071067, z: 0.000000012344529, w: 0.7071069}
+      scale: {x: 1, y: 1.000001, z: 1.0000008}
+    - name: Foot.R
+      parentName: Lower.Leg.R
+      position: {x: 2.980232e-10, y: 0.002231682, z: 7.105427e-17}
+      rotation: {x: 0.47316715, y: 0.5254645, z: -0.47316736, w: -0.5254642}
+      scale: {x: 1, y: 0.99999976, z: 0.9999999}
+    - name: Foot.R_end
+      parentName: Foot.R
+      position: {x: -0, y: 0.0027303263, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Fox_Outline
+      parentName: Character_Fox(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 102.951065, y: 100, z: 100}
+    - name: Fox_Smooth
+      parentName: Character_Fox(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 102.951065, y: 100, z: 100}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: Pelvis
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

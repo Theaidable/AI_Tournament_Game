@@ -1,0 +1,110 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-3779786099023755253
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 9
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Toon_Water
+  m_Shader: {fileID: -6465566751694194690, guid: f5bfd25b737e031418032f35c3cd8bbc, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 2
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 2950
+  stringTagMap: {}
+  disabledShaderPasses:
+  - MOTIONVECTORS
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _SplashMask:
+        m_Texture: {fileID: 8400000, guid: b27f86e9ef46d0f4aad895c230b6aa8c, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _DepthFadeDistance: 1
+    - _FloawFoamSize: 0.909
+    - _FlowFoamAmount: 16.33
+    - _FlowFoamDirection: 0
+    - _FlowFoamNoise: 27.35
+    - _FlowFoamSpeed: 0.5
+    - _FlowNoiseScale: 10.99
+    - _FlowSpeed: 2
+    - _Flowdirection: 8.99
+    - _FoamAmount: 1.57
+    - _FoamCutoff: 4.31
+    - _FoamDensity: 7
+    - _FoamScale: 0
+    - _FoamSlimness: 7.07
+    - _FoamSpeed: 2
+    - _FoamSpeed_1: 0.1
+    - _FoamSpread: 0.02
+    - _QueueControl: 0
+    - _QueueOffset: -50
+    - _RippleAmplitude: 0.1
+    - _RippleDensitiy: 5.84
+    - _RippleDensity: 5.57
+    - _RippleEdgeBlend: 0.342
+    - _RippleEffectRadius: 12.15
+    - _RippleFrequency: 3.08
+    - _RippleSlimness: 3.52
+    - _RippleSpeed: 1.1
+    - _RippleringThickness: 0.2
+    - _ShoreFoamAmount: 1
+    - _ShoreFoamCutoff: 1.12
+    - _ShoreFoamDistance: 0
+    - _ShoreFoamScale: 0
+    - _ShoreForamSpeed: 0.04
+    - _SplashFrequency: 30
+    - _SplashSpeed: 30
+    - _SplashWobble: 0.02
+    - _Transparency: 1
+    - _WaveHeight: 0.01
+    - _WaveSpeed: 0.05
+    - _Wobble: 0.0259
+    - _flowNoiseScale: 2.03
+    m_Colors:
+    - _BaseColor: {r: 0, g: 0.3318569, b: 0.6132076, a: 1}
+    - _DeepColor: {r: 0.07320219, g: 0.333639, b: 0.4433962, a: 0}
+    - _FoamColor: {r: 1, g: 1, b: 1, a: 1}
+    - _RippleCenter: {r: 2.41, g: 2.3, b: 0, a: 0}
+    - _RippleColor: {r: 2.8046856, g: 2.8046856, b: 2.8046856, a: 0}
+    - _ShallowColor: {r: 0.16862746, g: 0.7686275, b: 0.9490197, a: 0}
+    - _SplashOrigin: {r: -20.64, g: -21.4, b: 0, a: 0}
+    - _SplashSize: {r: 10, g: 10, b: 0, a: 0}
+    - _WaterColor: {r: 0.16862744, g: 0.7686275, b: 0.9490196, a: 1}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1

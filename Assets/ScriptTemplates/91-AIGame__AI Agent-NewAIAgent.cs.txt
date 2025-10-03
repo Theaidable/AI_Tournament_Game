@@ -1,0 +1,38 @@
+using UnityEngine;
+using AIGame.Core;
+
+namespace #NAMESPACE#
+{
+    /// <summary>
+    /// #SCRIPTNAME# AI implementation.
+    /// TODO: Describe your AI strategy here.
+    /// </summary>
+    public class #SCRIPTNAME# : BaseAI
+    {
+        /// <summary>
+        /// Configure the agent's stats (speed, health, etc.).
+        /// </summary>
+        protected override void ConfigureStats()
+        {
+            // TODO: Configure your agent's stats
+        }
+
+        /// <summary>
+        /// Called once when the agent starts.
+        /// Use this for initialization.
+        /// </summary>
+        protected override void StartAI()
+        {
+            // TODO: Initialize your AI here
+        }
+
+        /// <summary>
+        /// Called every frame to make decisions.
+        /// Implement your AI logic here.
+        /// </summary>
+        protected override void ExecuteAI()
+        {
+            // TODO: Implement your AI decision-making logic here
+        }
+    }
+}

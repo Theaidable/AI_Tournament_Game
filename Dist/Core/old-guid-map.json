@@ -1,0 +1,96 @@
+{
+    "entries": [
+        {
+            "typeFullName": "AIGame.Core.FollowCamera",
+            "oldGuid": "74ca2de18cf30754aa0e9f02fec77591"
+        },
+        {
+            "typeFullName": "AIGame.Core.FreeFlyCamera",
+            "oldGuid": "c591c7a6ec08a63419d9f6ae069f4c3a"
+        },
+        {
+            "typeFullName": "AIGame.Core.Agent",
+            "oldGuid": "2a9e7aee22efa6c439d098c9e877d957"
+        },
+        {
+            "typeFullName": "AIGame.Core.BaseAI",
+            "oldGuid": "548486591695f6e4a9475f9fc866309c"
+        },
+        {
+            "typeFullName": "AIGame.Core.Dummy",
+            "oldGuid": "2d861c9bc8f5e8148a52720751b69687"
+        },
+        {
+            "typeFullName": "AIGame.Core.Player",
+            "oldGuid": "eb78b0a59e83a6d4581dceb2ed08a963"
+        },
+        {
+            "typeFullName": "AIGame.Core.CaptureTheFlag",
+            "oldGuid": "b0ecacedbfd34f1448d098939686741b"
+        },
+        {
+            "typeFullName": "AIGame.Core.Flag",
+            "oldGuid": "f747ea95b8a284241a7001f218c9e289"
+        },
+        {
+            "typeFullName": "AIGame.Core.FlagCarrier",
+            "oldGuid": "93a8d3d9e458f3d4b8d2161cad6534cc"
+        },
+        {
+            "typeFullName": "AIGame.Core.FlagZone",
+            "oldGuid": "a57851fe202cdb343baa06d2ad2b2b7e"
+        },
+        {
+            "typeFullName": "AIGame.Core.ControlPoint",
+            "oldGuid": "6beb2467a8d5b064b817772953b34494"
+        },
+        {
+            "typeFullName": "AIGame.Core.ControlPointState",
+            "oldGuid": "dd5c54d513507e64bb613f22dd80b4de"
+        },
+        {
+            "typeFullName": "AIGame.Core.CP_References",
+            "oldGuid": "12ba256ea6791bb4a823931ab14f64f1"
+        },
+        {
+            "typeFullName": "AIGame.Core.ICaptureable",
+            "oldGuid": "e58084178758e5b4da9b5b8cc87200c7"
+        },
+        {
+            "typeFullName": "AIGame.Core.AgentFactory",
+            "oldGuid": "acb7c7347f4034c44af62732df43a3a3"
+        },
+        {
+            "typeFullName": "AIGame.Core.Ball",
+            "oldGuid": "59d5743ae0929ec40b838882b307f447"
+        },
+        {
+            "typeFullName": "AIGame.Core.Billboard",
+            "oldGuid": "5ecdb32e03d50a64f81626446c6177d1"
+        },
+        {
+            "typeFullName": "AIGame.Core.Detectable",
+            "oldGuid": "16baab822e481f9479b4a05beb9bfaa2"
+        },
+        {
+            "typeFullName": "AIGame.Core.FlameBilboard",
+            "oldGuid": "3373d9d989f87134f88fc8a944e3d61a"
+        },
+        {
+            "typeFullName": "AIGame.Core.NotifyStandup",
+            "oldGuid": "b816e05ec15e0384aac9221526f6a04a"
+        },
+        {
+            "typeFullName": "AIGame.Core.Ragdoll",
+            "oldGuid": "623f5c69f04000b4c9023013e86ba48b"
+        },
+        {
+            "typeFullName": "AIGame.Core.FoilageManager",
+            "oldGuid": "e4f748d691bb5f545b422835af99e191"
+        },
+        {
+            "typeFullName": "AIGame.Core.GameManager",
+            "oldGuid": "1e46278b9f61b0b4380917ec8d201cf7"
+        }
+    ]
+}
