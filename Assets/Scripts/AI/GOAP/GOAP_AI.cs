@@ -1,5 +1,7 @@
-using UnityEngine;
 using AIGame.Core;
+using AIGame.Examples.GoalOriented;
+using System.Collections.Generic;
+using UnityEngine;
 
 namespace GOAP.AI
 {
@@ -10,6 +12,17 @@ namespace GOAP.AI
     /// </summary>
     public class GOAP_AI : BaseAI
     {
+        private Planner _planner;
+        private Plan _currentPlan;
+
+        private List<Action> _availableActions;
+        private WorldState _currentGoal;
+
+        private float lastPlanTime = 0f;
+        private const float REPLAN_INTERVAL = 2f;
+
+        private Vector3 cpPosition = Vector3.zero;
+        private const float CP_RADIUS = 2.5f;
         private Vector3 lastKnownEnemyPosition = Vector3.zero;
         private float lastSeenTime = 0f;
 
@@ -26,30 +39,30 @@ namespace GOAP.AI
         }
 
         /// <summary>
-        /// Give agent a name
-        /// </summary>
-        /// <returns></returns>
-        protected override string SetName()
-        {
-            for (int i = 0; i < 5; i++)
-            {
-                string unitName = $"Jægersoldat_{i}";
-            }
-
-            return "";
-        }
-
-        /// <summary>
         /// Called once when the agent starts.
         /// </summary>
         protected override void StartAI()
         {
+            //Planner + mål
+            _planner = new Planner();
+            _currentGoal = new WorldState();
+
+            _currentGoal.SetState(StateKeys.AT_CP, true);
+
+            //Actions
+            _availableActions = new List<Action>
+            {
+                new IdleAction(this),
+                new MoveToCPAction(this)
+            };
+
             //Subscribe to VisionEvents
             EnemyEnterVision += OnEnemySpotted;         // Enemy comes into view
             EnemyExitVision += OnEnemyLost;             // Enemy leaves view
             FriendlyEnterVision += OnAllySpotted;       // Ally comes into view
             FriendlyExitVision += OnAllyLost;           // Ally leaves view
 
+            //Subscribe to CombatEvents
             BallDetected += OnIncomingBall;             // Ball heading towards you
             VisibleFriendlyDeath += OnAllyDied;         // Ally was killed
             VisibleEnemyDeath += OnEnemyDied;           // Enemy was killed
@@ -61,9 +74,76 @@ namespace GOAP.AI
         /// </summary>
         protected override void ExecuteAI()
         {
-            // TODO: Implement your AI decision-making logic here
+            if (IsAlive == false)
+            {
+                return;
+            }
+
+            // Start planning immediately
+            if (_currentPlan == null || _currentPlan.IsEmpty() || Time.time - lastPlanTime > REPLAN_INTERVAL)
+            {
+                CreateNewPlan();
+                lastPlanTime = Time.time;
+            }
+
+            // Execute current action
+            if (_currentPlan != null && !_currentPlan.IsEmpty())
+            {
+                ExecuteCurrentAction();
+            }
         }
 
+        private void CreateNewPlan()
+        {
+            WorldState currentWorldState = AssessCurrentWorldState();
+            _currentPlan = _planner.CreatePlan(currentWorldState, _currentGoal, _availableActions);
+        }
+
+        private WorldState AssessCurrentWorldState()
+        {
+            var ws = new WorldState();
+
+            var cp = ControlPoint.Instance;
+
+            if(cp != null)
+            {
+                cpPosition = cp.transform.position;
+            }
+
+            bool knowCP = (cpPosition != Vector3.zero);
+            ws.SetState(StateKeys.KNOW_CP_POSITION, knowCP);
+            ws.SetState(StateKeys.CONTROL_POINT_POSITION, cpPosition);
+
+            bool atCP = knowCP && Vector3.Distance(transform.position, cpPosition) <= CP_RADIUS;
+            ws.SetState(StateKeys.AT_CP, atCP);
+
+            return ws;
+        }
+
+        private void ExecuteCurrentAction()
+        {
+            Action currentAction = _currentPlan.GetCurrentAction();
+
+            if (currentAction == null)
+            {
+                return;
+            }
+
+            // Execute the action
+            bool actionStarted = currentAction.Execute();
+
+            if (actionStarted == false)
+            {
+                _currentPlan.RemoveCurrentAction();
+                return;
+            }
+
+            // Check if action is complete
+            if (currentAction.IsComplete() == true)
+            {
+                _currentPlan.RemoveCurrentAction();
+            }
+        }
 
         #region Events
 

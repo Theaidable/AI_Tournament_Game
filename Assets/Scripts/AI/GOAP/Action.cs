@@ -1,6 +1,7 @@
 using AIGame.Core;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 namespace GOAP.AI
 {
@@ -58,7 +59,7 @@ namespace GOAP.AI
     #region IdleAction
     public class IdleAction : Action
     {
-        public IdleAction(BaseAI agent, float cost) : base(agent, "Idle", 1) { }
+        public IdleAction(BaseAI agent, float cost = 1) : base(agent, "Idle", cost) { }
 
         public override bool Execute()
         {
@@ -71,5 +72,71 @@ namespace GOAP.AI
             return false;
         }
     }
+    #endregion
+
+    #region MoveToCPAction
+    public class MoveToCPAction : Action
+    {
+        private Vector3 controlpointPosition;
+        private float stopDistance = 2.5f;
+        private NavMeshAgent nav;
+        private bool destinationSet;
+
+        public MoveToCPAction(BaseAI agent, float cost = 2f) : base(agent, "MoveToCP", cost) 
+        {
+            //Requires to know the position of the CP
+            preconditions.SetState(StateKeys.KNOW_CP_POSITION, true);
+        }
+
+        protected override Dictionary<string, object> GetEffects()
+        {
+            var effects = new Dictionary<string, object>();
+            effects[StateKeys.AT_CP] = true;
+            return effects;
+        }
+
+        public override bool Execute()
+        {
+            var controlpoint = ControlPoint.Instance;
+            
+            nav = agent.GetComponent<NavMeshAgent>();
+            controlpointPosition = controlpoint.transform.position;
+
+            if(controlpoint == null)
+            {
+                return false;
+            }
+
+            if(nav != null)
+            {
+                nav.stoppingDistance = stopDistance;
+
+                if(destinationSet == false || (nav.destination - controlpointPosition).sqrMagnitude > 0.1f)
+                {
+                    nav.SetDestination(controlpointPosition);
+                    destinationSet = true;
+                }
+
+                return true;
+            }
+
+            return false;
+        }
+
+        public override bool IsComplete()
+        {
+            var controlpoint = ControlPoint.Instance;
+
+            if (controlpoint == null)
+            {
+                return false;
+            }
+
+            float distance = Vector3.Distance(agent.transform.position, controlpoint.transform.position);
+            
+            return distance <= stopDistance;
+        }
+    }
+
     #endregion
 }
