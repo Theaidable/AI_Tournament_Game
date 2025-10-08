@@ -23,8 +23,8 @@ namespace GOAP.AI
 
         private Vector3 cpPosition = Vector3.zero;
         private const float CP_RADIUS = 2.5f;
+
         private Vector3 lastKnownEnemyPosition = Vector3.zero;
-        private float lastSeenTime = 0f;
 
         /// <summary>
         /// Configure the agent's stats
@@ -53,20 +53,20 @@ namespace GOAP.AI
             _availableActions = new List<Action>
             {
                 new IdleAction(this),
-                new MoveToCPAction(this)
+                new MoveToCPAction(this),
+                new ShootAction(this)
             };
 
             //Subscribe to VisionEvents
-            EnemyEnterVision += OnEnemySpotted;         // Enemy comes into view
-            EnemyExitVision += OnEnemyLost;             // Enemy leaves view
-            FriendlyEnterVision += OnAllySpotted;       // Ally comes into view
-            FriendlyExitVision += OnAllyLost;           // Ally leaves view
+            EnemyEnterVision += OnEnemySpotted;
+            EnemyExitVision += OnEnemyLost;
 
             //Subscribe to CombatEvents
-            BallDetected += OnIncomingBall;             // Ball heading towards you
-            VisibleFriendlyDeath += OnAllyDied;         // Ally was killed
-            VisibleEnemyDeath += OnEnemyDied;           // Enemy was killed
-            DodgeComplete += OnDodgeFinished;           // Dodge maneuver finished
+            BallDetected += OnIncomingBall; 
+            DodgeComplete += OnDodgeFinished; 
+
+            // Subscribe to respawn event
+            Respawned += OnRespawned;
         }
 
         /// <summary>
@@ -117,6 +117,10 @@ namespace GOAP.AI
             bool atCP = knowCP && Vector3.Distance(transform.position, cpPosition) <= CP_RADIUS;
             ws.SetState(StateKeys.AT_CP, atCP);
 
+            var enemies = GetVisibleEnemiesSnapshot();
+            bool enemyVisible = enemies.Count > 0;
+            ws.SetState(StateKeys.ENEMY_VISIBLE, enemyVisible);
+
             return ws;
         }
 
@@ -147,10 +151,16 @@ namespace GOAP.AI
 
         #region Events
 
-        #region VisionEvents
+        private void OnRespawned()
+        {
+            _currentPlan = null;
+            lastPlanTime = 0f;
+        }
+
         private void OnEnemySpotted()
         {
             RefreshOrAcquireTarget();
+            lastPlanTime = 0f;
         }
 
         private void OnEnemyLost()
@@ -159,23 +169,9 @@ namespace GOAP.AI
             if (TryGetTarget(out var target))
             {
                 lastKnownEnemyPosition = target.Position;
-                lastSeenTime = Time.time;
             }
         }
 
-        private void OnAllySpotted()
-        {
-
-        }
-
-        private void OnAllyLost()
-        {
-
-        }
-
-        #endregion
-
-        #region CombatEvents
         private void OnIncomingBall(Ball ball)
         {
             if (CanDodge() == true)
@@ -186,21 +182,11 @@ namespace GOAP.AI
             }
         }
 
-        private void OnAllyDied()
-        {
-
-        }
-
-        private void OnEnemyDied()
-        {
-
-        }
-
         private void OnDodgeFinished()
         {
-
+            FaceTarget(lastKnownEnemyPosition);
+            RefreshOrAcquireTarget();
         }
-        #endregion
 
         #endregion
     }

@@ -151,11 +151,28 @@ namespace GOAP.AI
             // Subtract cost to prefer cheaper actions
             score -= action.Cost;
 
-            //TODO : Lav prioteretsliste ud fra de actions der laves
-
-            if(currentState.GetState<bool>(StateKeys.AT_CP) == false && action is MoveToCPAction)
+            //Priotetsliste
+            if(currentState.GetState<bool>(StateKeys.ENEMY_VISIBLE) == true)
             {
-                score += 50;
+                if(action is ShootAction)
+                {
+                    score += 70;
+                }
+                else
+                {
+                    score -= 50;
+                }
+            }
+            else if(currentState.GetState<bool>(StateKeys.AT_CP) == false)
+            {
+                if(action is MoveToCPAction)
+                {
+                    score += 70;
+                }
+                else
+                {
+                    score -= 50;
+                }
             }
 
             return score;

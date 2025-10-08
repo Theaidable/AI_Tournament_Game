@@ -79,12 +79,10 @@ namespace GOAP.AI
     {
         private Vector3 controlpointPosition;
         private float stopDistance = 2.5f;
-        private NavMeshAgent nav;
-        private bool destinationSet;
 
         public MoveToCPAction(BaseAI agent, float cost = 2f) : base(agent, "MoveToCP", cost) 
         {
-            //Requires to know the position of the CP
+            preconditions.SetState(StateKeys.ENEMY_VISIBLE, false);
             preconditions.SetState(StateKeys.KNOW_CP_POSITION, true);
         }
 
@@ -98,8 +96,6 @@ namespace GOAP.AI
         public override bool Execute()
         {
             var controlpoint = ControlPoint.Instance;
-            
-            nav = agent.GetComponent<NavMeshAgent>();
             controlpointPosition = controlpoint.transform.position;
 
             if(controlpoint == null)
@@ -107,16 +103,17 @@ namespace GOAP.AI
                 return false;
             }
 
-            if(nav != null)
+            if(controlpoint.OTActive == true)
             {
-                nav.stoppingDistance = stopDistance;
+                agent.MoveTo(controlpointPosition);
+                return true;
+            }
 
-                if(destinationSet == false || (nav.destination - controlpointPosition).sqrMagnitude > 0.1f)
-                {
-                    nav.SetDestination(controlpointPosition);
-                    destinationSet = true;
-                }
+            Team contestants = controlpoint.CurrentTeam;
 
+            if(contestants == Team.None || contestants != agent.MyDetectable.TeamID)
+            {
+                agent.MoveTo(controlpointPosition);
                 return true;
             }
 
@@ -138,5 +135,57 @@ namespace GOAP.AI
         }
     }
 
+    #endregion
+
+    #region StrafeAndSHootAction
+    public class ShootAction : Action
+    {
+        private float sideSwitchSpeed = 1.25f; // hvor hurtigt vi skifter strafe-side
+
+        public ShootAction(BaseAI agent, float cost = 1.2f) : base(agent, "Shoot", cost)
+        {
+            preconditions.SetState(StateKeys.ENEMY_VISIBLE, true);
+        }
+
+        protected override Dictionary<string, object> GetEffects()
+        {
+            //Ingen effekt på WorldState
+            return new Dictionary<string, object>();
+        }
+
+        public override bool Execute()
+        {
+            if(agent.HasTarget == false)
+            {
+                agent.RefreshOrAcquireTarget();
+
+                if(agent.HasTarget == false)
+                {
+                    return true; //Ingen at skyde på i dette frame
+                }
+            }
+
+            if (agent.HasTarget == true && agent.TryGetTarget(out var target))
+            {
+                float distance = Vector3.Distance(agent.transform.position, target.Position);
+
+                if (distance <= agent.ProjectileRange)
+                {
+                    agent.ThrowBallAt(target);
+                }
+                else
+                {
+                    agent.MoveTo(target.Position);
+                }
+            }
+
+            return true;
+        }
+
+        public override bool IsComplete()
+        {
+            return !agent.HasTarget;
+        }
+    }
     #endregion
 }
