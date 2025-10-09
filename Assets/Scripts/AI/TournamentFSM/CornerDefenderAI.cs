@@ -17,24 +17,31 @@ namespace AIGame.TournamentFSM
         {
             fsm = new FSM();
 
-            // Shared combat micro
             var strafe = new Strafe(this);
             var follow = new FollowEnemy(this);
             var dodge = new Dodge(this);
-            combat = new Combat(this, strafe, follow, dodge);
-
+            var combat = new Combat(this, strafe, follow, dodge);
             idle = new Idle(this);
-            holdCorner = new GuardAtOffset(this, CornerOffset, dodge);
 
-            // Conditions
+            AIState shortSearch = null;
+            shortSearch = new ShortSearch(this,
+                onTimeout: () => fsm.SetCondition(AICondition.MoveToObjective),
+                2.0f, dodge, strafe);
+
+            BallDetected += ball => dodge.OnBallDetected(ball);
             EnemyEnterVision += () => fsm.SetCondition(AICondition.SeesEnemy);
             Death += () => fsm.ChangeState(idle);
             Respawned += () => fsm.SetCondition(AICondition.Spawned);
 
-            // Transitions
+            combat.NoMoreEnemies += () => fsm.ChangeState(shortSearch);
+
+            holdCorner = new GuardAtOffset(this, CornerOffset, dodge);
+
             fsm.AddTransition(idle, AICondition.Spawned, holdCorner);
             fsm.AddTransition(holdCorner, AICondition.SeesEnemy, combat);
             fsm.AddTransition(combat, AICondition.MoveToObjective, holdCorner);
+            fsm.AddTransition(shortSearch, AICondition.SeesEnemy, combat);
+            fsm.AddTransition(shortSearch, AICondition.MoveToObjective, holdCorner);
 
             fsm.ChangeState(holdCorner);
         }
@@ -42,10 +49,10 @@ namespace AIGame.TournamentFSM
         protected override void ConfigureStats()
         {
             // Slightly more defensive profile; holds angle and trades.
-            AllocateStat(StatType.ProjectileRange, 6);
-            AllocateStat(StatType.ReloadSpeed, 5);
-            AllocateStat(StatType.VisionRange, 5);
-            AllocateStat(StatType.Speed, 4);
+            AllocateStat(StatType.ProjectileRange, 7);
+            AllocateStat(StatType.ReloadSpeed, 2);
+            AllocateStat(StatType.VisionRange, 8);
+            AllocateStat(StatType.Speed, 3);
         }
 
         protected override void ExecuteAI() => fsm.Execute();

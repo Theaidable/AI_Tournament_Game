@@ -14,32 +14,40 @@ namespace AIGame.TournamentFSM
         {
             fsm = new FSM();
 
-            // Shared combat micro
+            // micro
             var strafe = new Strafe(this);
             var follow = new FollowEnemy(this);
             var dodge = new Dodge(this);
-            combat = new Combat(this, strafe, follow, dodge);
-
+            var combat = new Combat(this, strafe, follow, dodge);
             idle = new Idle(this);
 
-            // Anchor just outside center, nudged toward enemy half (positive Z by convention)
-            var edgeOffset = new Vector3(0f, 0f, 5f);
-            holdEdge = new GuardAtOffset(this, edgeOffset, dodge, strafe);
+            AIState shortSearch = null;
+            shortSearch = new ShortSearch(this,
+                onTimeout: () => fsm.SetCondition(AICondition.MoveToObjective),
+                2.0f, dodge, strafe);
 
-            // Quick hard-contest of center when quiet
-            holdCenter = new HoldCenterAndLookAround(this, dodge);
-
-            // Conditions from framework events (keep names consistent with your example)
+            // wire sensors -> states
+            BallDetected += ball => dodge.OnBallDetected(ball);
             EnemyEnterVision += () => fsm.SetCondition(AICondition.SeesEnemy);
-            Death += () => fsm.ChangeState(idle);
+            Death += () => fsm.ChangeState(new Idle(this));
             Respawned += () => fsm.SetCondition(AICondition.Spawned);
 
-            // Transitions
-            fsm.AddTransition(idle, AICondition.Spawned, holdEdge);
+            // combat exit -> move back to objective/anchor
+            combat.NoMoreEnemies += () => fsm.ChangeState(shortSearch);
+
+            // anchors
+            var edgeOffset = new Vector3(0f, 0f, 5f);
+            holdEdge = new GuardAtOffset(this, edgeOffset, dodge, strafe);
+            holdCenter = new HoldCenterAndLookAround(this, dodge);
+
+            // transitions
+            fsm.AddTransition(new Idle(this), AICondition.Spawned, holdEdge);
             fsm.AddTransition(holdEdge, AICondition.SeesEnemy, combat);
             fsm.AddTransition(combat, AICondition.MoveToObjective, holdEdge);
+            fsm.AddTransition(shortSearch, AICondition.SeesEnemy, combat);
+            fsm.AddTransition(shortSearch, AICondition.MoveToObjective, holdEdge);
 
-            // Small periodic nudge to briefly contest center when no enemies are visible
+            // periodic brief contest if quiet
             InvokeRepeating(nameof(MaybeContestCenter), 8f, 10f);
 
             fsm.ChangeState(holdEdge);
@@ -68,9 +76,9 @@ namespace AIGame.TournamentFSM
         {
             // Slight speed/vision bias to encourage safe pokes forward
             AllocateStat(StatType.Speed, 6);
-            AllocateStat(StatType.VisionRange, 6);
-            AllocateStat(StatType.ProjectileRange, 4);
-            AllocateStat(StatType.ReloadSpeed, 4);
+            AllocateStat(StatType.VisionRange, 7);
+            AllocateStat(StatType.ProjectileRange, 6);
+            AllocateStat(StatType.ReloadSpeed, 1);
         }
 
         protected override void ExecuteAI() => fsm.Execute();

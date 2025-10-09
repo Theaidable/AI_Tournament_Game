@@ -14,24 +14,31 @@ namespace AIGame.TournamentFSM
         {
             fsm = new FSM();
 
-            // Shared combat micro
             var strafe = new Strafe(this);
             var follow = new FollowEnemy(this);
             var dodge = new Dodge(this);
-            combat = new Combat(this, strafe, follow, dodge);
-
+            var combat = new Combat(this, strafe, follow, dodge);
             idle = new Idle(this);
-            holdMid = new HoldCenterAndLookAround(this, dodge, strafe);
 
-            // Conditions
+            AIState shortSearch = null;
+            shortSearch = new ShortSearch(this,
+                onTimeout: () => fsm.SetCondition(AICondition.MoveToObjective),
+                2.0f, dodge, strafe);
+
+            BallDetected += ball => dodge.OnBallDetected(ball);
             EnemyEnterVision += () => fsm.SetCondition(AICondition.SeesEnemy);
             Death += () => fsm.ChangeState(idle);
             Respawned += () => fsm.SetCondition(AICondition.Spawned);
 
-            // Transitions
+            combat.NoMoreEnemies += () => fsm.ChangeState(shortSearch);
+
+            holdMid = new HoldCenterAndLookAround(this, dodge, strafe);
+
             fsm.AddTransition(idle, AICondition.Spawned, holdMid);
             fsm.AddTransition(holdMid, AICondition.SeesEnemy, combat);
             fsm.AddTransition(combat, AICondition.MoveToObjective, holdMid);
+            fsm.AddTransition(shortSearch, AICondition.SeesEnemy, combat);
+            fsm.AddTransition(shortSearch, AICondition.MoveToObjective, holdMid);
 
             fsm.ChangeState(holdMid);
         }
@@ -40,8 +47,8 @@ namespace AIGame.TournamentFSM
         {
             // Vision-forward profile; stays calm in center and spots threats fast
             AllocateStat(StatType.VisionRange, 7);
-            AllocateStat(StatType.ReloadSpeed, 5);
-            AllocateStat(StatType.ProjectileRange, 4);
+            AllocateStat(StatType.ReloadSpeed, 3);
+            AllocateStat(StatType.ProjectileRange, 6);
             AllocateStat(StatType.Speed, 4);
         }
 
