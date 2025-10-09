@@ -29,7 +29,7 @@ namespace AIGame.TournamentFSM
             // wire sensors -> states
             BallDetected += ball => dodge.OnBallDetected(ball);
             EnemyEnterVision += () => fsm.SetCondition(AICondition.SeesEnemy);
-            Death += () => fsm.ChangeState(new Idle(this));
+            Death += () => fsm.ChangeState(idle);
             Respawned += () => fsm.SetCondition(AICondition.Spawned);
 
             // combat exit -> move back to objective/anchor
@@ -41,7 +41,7 @@ namespace AIGame.TournamentFSM
             holdCenter = new HoldCenterAndLookAround(this, dodge);
 
             // transitions
-            fsm.AddTransition(new Idle(this), AICondition.Spawned, holdEdge);
+            fsm.AddTransition(idle, AICondition.Spawned, holdEdge);
             fsm.AddTransition(holdEdge, AICondition.SeesEnemy, combat);
             fsm.AddTransition(combat, AICondition.MoveToObjective, holdEdge);
             fsm.AddTransition(shortSearch, AICondition.SeesEnemy, combat);
