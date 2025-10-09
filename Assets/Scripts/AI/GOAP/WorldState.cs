@@ -116,7 +116,7 @@ namespace GOAP.AI
         public const string LAST_ENEMY_DIR = "LastEnemyDir";
 
         // Overlevelse
-        public const string INCOMING_DANGER = "IncomingDanger"; // sættes true ved projektil på kollisionskurs
+        public const string INCOMING_DANGER = "IncomingDanger";
 
         // Formation / patrulje
         public const string ALLY_COUNT_NEARBY = "AllyCountNearby";

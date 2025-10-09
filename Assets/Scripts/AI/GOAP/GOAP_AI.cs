@@ -1,7 +1,7 @@
 using AIGame.Core;
-using AIGame.Examples.GoalOriented;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace GOAP.AI
 {
@@ -25,6 +25,9 @@ namespace GOAP.AI
         private const float CP_RADIUS = 2.5f;
 
         private Vector3 lastKnownEnemyPosition = Vector3.zero;
+
+        private DodgeAction _dodgeAction;
+        private bool incomingDanger;
 
         /// <summary>
         /// Configure the agent's stats
@@ -54,6 +57,7 @@ namespace GOAP.AI
             {
                 new IdleAction(this),
                 new MoveToCPAction(this),
+                (_dodgeAction = new DodgeAction(this)),
                 new ShootAction(this)
             };
 
@@ -62,7 +66,7 @@ namespace GOAP.AI
             EnemyExitVision += OnEnemyLost;
 
             //Subscribe to CombatEvents
-            BallDetected += OnIncomingBall; 
+            BallDetected += OnBallDetected;
             DodgeComplete += OnDodgeFinished; 
 
             // Subscribe to respawn event
@@ -121,6 +125,8 @@ namespace GOAP.AI
             bool enemyVisible = enemies.Count > 0;
             ws.SetState(StateKeys.ENEMY_VISIBLE, enemyVisible);
 
+            ws.SetState(StateKeys.INCOMING_DANGER, incomingDanger);
+
             return ws;
         }
 
@@ -172,20 +178,19 @@ namespace GOAP.AI
             }
         }
 
-        private void OnIncomingBall(Ball ball)
+        private void OnBallDetected(Ball ball)
         {
-            if (CanDodge() == true)
-            {
-                Vector3 ballDirection = (ball.transform.position - transform.position).normalized;
-                Vector3 dodgeDirection = Vector3.Cross(ballDirection, Vector3.up).normalized;
-                StartDodge(dodgeDirection);
-            }
+            incomingDanger = true;
+            _dodgeAction?.NotifyIncomingBall(ball);
+            lastPlanTime = 0f;
         }
 
         private void OnDodgeFinished()
         {
+            incomingDanger = false;
             FaceTarget(lastKnownEnemyPosition);
             RefreshOrAcquireTarget();
+            lastPlanTime = 0f;
         }
 
         #endregion

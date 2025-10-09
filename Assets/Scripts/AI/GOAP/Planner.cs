@@ -1,4 +1,5 @@
 using AIGame.Examples.GoalOriented;
+using NUnit.Framework.Internal;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -152,7 +153,19 @@ namespace GOAP.AI
             score -= action.Cost;
 
             //Priotetsliste
-            if(currentState.GetState<bool>(StateKeys.ENEMY_VISIBLE) == true)
+
+            if(currentState.GetState<bool>(StateKeys.INCOMING_DANGER) == true)
+            {
+                if(action is DodgeAction)
+                {
+                    score += 70;
+                }
+                else
+                {
+                    score -= 50;
+                }
+            }
+            else if(currentState.GetState<bool>(StateKeys.ENEMY_VISIBLE) == true)
             {
                 if(action is ShootAction)
                 {
@@ -163,9 +176,9 @@ namespace GOAP.AI
                     score -= 50;
                 }
             }
-            else if(currentState.GetState<bool>(StateKeys.AT_CP) == false)
+            else if (currentState.GetState<bool>(StateKeys.AT_CP) == false)
             {
-                if(action is MoveToCPAction)
+                if (action is MoveToCPAction)
                 {
                     score += 70;
                 }
